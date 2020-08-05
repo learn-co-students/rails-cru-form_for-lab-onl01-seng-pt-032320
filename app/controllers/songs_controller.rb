@@ -1,12 +1,25 @@
 class SongsController < ApplicationController
-    def show 
-        @song = Song.find_by_id(params[:id]
+
+    def index 
+        @songs = Song.all 
     end 
+    def show 
+        @song = Song.find_by_id(params[:id])
+    end 
+
+    def new 
+        @song = Song.new 
+    end 
+
 
     def create 
         @song = Song.new(post_params(:name))
         @song.save 
         redirect_to song_path(@song)
+    end 
+
+    def edit 
+        @song = Song.find_by_id(params[:id])
     end 
 
     def update 
