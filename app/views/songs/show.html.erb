@@ -1,2 +1,4 @@
-<h1>My Song</h1>
-<p><%= @song.name %></p>
+<h1><%= @song.name %></h1>
+<%# link_to(@genre.name, genre_path(@genre)) %>
+<%# link_to(@artist.name, artist_path(@artist)) %>
+<%= link_to 'Back', :back %>
